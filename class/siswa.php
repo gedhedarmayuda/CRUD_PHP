@@ -46,7 +46,7 @@ class Siswa
     }
     public function updateSiswa()
     {
-        $sql = "UPDATE" . $this->db_table . "SET nama_siswa = :nama_siswa, alamat = :alamat, tempat_lahir = :tempat_lahir WHERE no_siswa = :no_siswa";
+        $sql = "UPDATE " . $this->db_table . " SET nama_siswa = :nama_siswa, alamat = :alamat, tempat_lahir = :tempat_lahir, tgl_lahir = :tgl_lahir, nama_wali = :nama_wali WHERE no_siswa = :no_siswa";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -54,11 +54,15 @@ class Siswa
         $this->alamat = htmlspecialchars(strip_tags($this->alamat));
         $this->tempat_lahir = htmlspecialchars(strip_tags($this->tempat_lahir));
         $this->no_siswa = htmlspecialchars(strip_tags($this->no_siswa));
+        $this->tgl_lahir = htmlspecialchars(strip_tags($this->tgl_lahir));
+        $this->nama_wali = htmlspecialchars(strip_tags($this->nama_wali));
 
         $stmt->bindParam(":nama_siswa", $this->nama_siswa);
         $stmt->bindParam(":alamat", $this->alamat);
         $stmt->bindParam(":tempat_lahir", $this->tempat_lahir);
         $stmt->bindParam(":no_siswa", $this->no_siswa);
+        $stmt->bindParam(":tgl_lahir", $this->tgl_lahir);
+        $stmt->bindParam(":nama_wali", $this->nama_wali);
 
         if ($stmt->execute()) {
             return true;
