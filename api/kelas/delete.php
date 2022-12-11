@@ -13,9 +13,9 @@ $db = $database->getConnection();
 $item = new Kelas($db);
 $data = json_decode(file_get_contents("php://input"));
 $item->kode_kelas = $data->kode_kelas;
-if($item->deleteKelas()){
+if ($item->deleteKelas()) {
     echo json_encode("Kelas dihapus");
-}else{
+} else {
     echo json_encode("Kelas tidak bisa dihapus");
 }
 ?>
