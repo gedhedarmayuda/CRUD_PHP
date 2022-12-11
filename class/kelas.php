@@ -4,6 +4,10 @@ class Kelas
     private $conn;
     private $db_table = "kelas";
     public $kode_kelas;
+    public $kapasitas;
+    public $meja;
+    public $bangku;
+    public $papan_tulis;
     public function __construct($db)
     {
         $this->conn = $db;
