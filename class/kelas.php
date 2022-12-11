@@ -21,7 +21,7 @@ class Kelas
     }
     public function deleteKelas()
     {
-        $sql = "DELETE FROM " . $this->db_table . " WHERE id = ?";
+        $sql = "DELETE FROM " . $this->db_table . " WHERE kode_kelas = ?";
         $stmt = $this->conn->prepare($sql);
 
         $this->kode_kelas = htmlspecialchars(strip_tags($this->kode_kelas));

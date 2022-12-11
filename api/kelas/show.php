@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-include_once('../config/database.php');
-include_once('../api/kelas.php');
+include_once('D:/Percobaan/AndroidStudioProjects/CRUD_PHP/config/database.php');
+include_once('D:/Percobaan/AndroidStudioProjects/CRUD_PHP/class/kelas.php');
 
 $database = new Database();
 $db = $database->getConnection();
