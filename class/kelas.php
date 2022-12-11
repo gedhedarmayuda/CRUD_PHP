@@ -15,15 +15,16 @@ class Kelas
         $stmt->execute();
         return $stmt;
     }
-    public function deleteKelas(){
+    public function deleteKelas()
+    {
         $sql = "DELETE FROM " . $this->db_table . " WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
-    
+
         $this->kode_kelas = htmlspecialchars(strip_tags($this->kode_kelas));
-    
+
         $stmt->bindParam(1, $this->kode_kelas);
-    
-        if($stmt->execute()){
+
+        if ($stmt->execute()) {
             return true;
         }
         return false;
